@@ -22,13 +22,14 @@ class StagiaireCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
+            IdField::new('id')
+                ->hideOnForm(),
             TextField::new('nom'),
             TextField::new('prenom'),
             EmailField::new('email'),
             TextField::new('ville'),
             AssociationField::new('sessions')
-                ->onlyOnIndex(),
+                ->hideOnDetail(),
             ArrayField::new('sessions')
                 ->onlyOnDetail(),
         ];
