@@ -24,12 +24,12 @@ class SessionCrudController extends AbstractCrudController
     {
         return [
             TextField::new('nom'),
-            TextField::new('formateur'),
+            AssociationField::new('formateur'),
             DateField::new('dateDebut'),
             DateField::new('dateFin'),
             IntegerField::new('nbPlaces'),
             AssociationField::new('stagiaires')
-                ->onlyOnIndex(),
+                ->hideOnDetail(),
             ArrayField::new('stagiaires')
                 ->onlyOnDetail(),
         ];
