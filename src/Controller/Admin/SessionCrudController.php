@@ -24,6 +24,7 @@ class SessionCrudController extends AbstractCrudController
     {
         return [
             TextField::new('nom'),
+            TextField::new('formateur'),
             DateField::new('dateDebut'),
             DateField::new('dateFin'),
             IntegerField::new('nbPlaces'),
