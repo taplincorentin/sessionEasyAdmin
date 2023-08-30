@@ -66,6 +66,6 @@ class Programme
     }
 
     public function __toString(): string {
-        return $this->getSession()->getNom().' '.$this->getNbJours().' jours';
+        return $this->getModule()->getNom().' '.$this->getNbJours().' jours';
     }
 }

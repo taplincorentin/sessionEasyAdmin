@@ -32,6 +32,10 @@ class SessionCrudController extends AbstractCrudController
                 ->hideOnDetail(),
             ArrayField::new('stagiaires')
                 ->onlyOnDetail(),
+            AssociationField::new('programmes')
+                ->onlyOnIndex(),
+            ArrayField::new('programmes')
+                ->onlyOnDetail(),
         ];
     }
 

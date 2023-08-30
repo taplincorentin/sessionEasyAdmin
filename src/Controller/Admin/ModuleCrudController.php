@@ -23,8 +23,6 @@ class ModuleCrudController extends AbstractCrudController
             TextField::new('nom'),
             AssociationField::new('programmes')
                 ->onlyOnIndex(),
-            ArrayField::new('programmes')
-                ->onlyOnDetail(),
         ];
     }
 
