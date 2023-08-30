@@ -3,9 +3,10 @@
 namespace App\Controller\Admin;
 
 use App\Entity\User;
-use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class UserCrudController extends AbstractCrudController
 {
@@ -20,9 +21,7 @@ class UserCrudController extends AbstractCrudController
     {
         return [
             EmailField::new('email'),
-            TextField::new('password')
-                ->onlyOnForms(),
-            
+            TextField::new('password')->setFormType(PasswordType::class),            
         ];
     }
 
